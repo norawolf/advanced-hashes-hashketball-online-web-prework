@@ -60,15 +60,15 @@ describe 'hashketball' do
   describe '#team_colors' do
 
     it 'knows the Brooklyn Nets colors are Black and White' do
-      expect(colors("Brooklyn Nets")).to contain_exactly("Black", "White")
-      expect(colors("Charlotte Hornets")).to contain_exactly("Turquoise", "Purple")
+      expect(team_colors("Brooklyn Nets")).to contain_exactly("Black", "White")
+      expect(team_colors("Charlotte Hornets")).to contain_exactly("Turquoise", "Purple")
       end
     end
 
   describe '#team_names' do
 
     it 'returns the team names' do
-      teams = team_name
+      teams = team_names
       expect(teams.size).to eq(2)
       teams.each do |name|
         expect(["Brooklyn Nets", "Charlotte Hornets"]).to include(name)
