@@ -179,10 +179,6 @@ def player_numbers(team_name)
 player_num.sort
 end
 
-#Build a method, player_stats, that takes in an argument of a player's name and
-#returns a hash of that player's stats.
-
-
 def player_stats(player_name)
 
   game_hash.each do |team_origin, data_categories|
@@ -195,7 +191,6 @@ def player_stats(player_name)
   end
 end
 
-#use .max once all shoe sizes are added to array
 
 def big_shoe_rebounds
   biggest_shoe = 0
@@ -219,5 +214,31 @@ game_hash.each do |team_origin, data_categories|
     end
   end
 end
+end
 
+#BONUS BELOW
+
+def most_points_scored
+  test_points = 0
+  selected_name = ""
+
+  game_hash.each do |team_origin, data_categories|
+    data_categories[:players].each do |player_name, player_data|
+      if player_data[:points] > test_points
+        test_points = player_data[:points]
+        selected_name = player_name
+      end
+    end
+
+  end
+selected_name
+end
+
+def winning_team
+end
+
+def player_with_longest_name
+end
+
+def long_name_steals_a_ton?
 end
